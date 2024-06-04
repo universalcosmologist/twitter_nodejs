@@ -1,8 +1,8 @@
-const formData=new FormData();
 const form=document.getElementById('signup-form')
 
 form.addEventListener('submit',async(e)=>{
     e.preventDefault();
+    const formData=new FormData();
    const username=document.getElementById('username').value;
    const password=document.getElementById('password').value;
    const fullname=document.getElementById('fullname').value;
