@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Like Page</title>
+    <link href="../output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-700">
+    <p class="text-2xl text-bold text-white ml-6 mt-6">Thanks for liking the Tweet !</p>
+    <script>
+        const token=localStorage.getItem('token');
+        const urlParams = new URLSearchParams(window.location.search);
+        const tweetid=urlParams.get('tweet').split(' ')[0];
+        window.addEventListener('DOMContentLoaded',async(e)=>{
+            const url='http://localhost:9002/tweet/like';
+            await fetch(url,{
+                method:'GET',
+                headers:{
+                    'Authorization':`Bearer ${token}`,
+                    'Tweet-Id':`${tweetid}`,
+                },
+            })
+            .then()
+            .catch();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Tweet</title>
+    <link href="../output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-900">
+<div class="underline font-serif text-4xl heading w-full max-w-full h-20 bg-slate-200 mb-5 text-center">
+ Post Your Tweet Here
+</div>
+<div class="container w-full max-w-full h-40 bg-slate-200">
+    <form class="py-3 flex justify-center items-center" id="posttweet">
+        <label for="textarea" class="text-2xl mx-20 underline">Write Tweet</label>
+        <textarea name="tweetcontent" id="textarea" rows="2" cols="20" class="font-thin mx-20 border border-slate-950" placeholder="enter your text here"></textarea>
+         <button type="submit" class="hover:bg-blue-700 text-gray-50 mx-20 bg-blue-600 px-2 py-2 rounded-sm">POST</button>
+    </form>
+</div>
+<script src="./post.js"></script>
+</body>
+</html>

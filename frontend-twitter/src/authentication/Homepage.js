@@ -4,7 +4,7 @@ const showsignup=document.getElementById('take_tosignup');
 signinform.addEventListener('submit',async (e)=>{
     e.preventDefault();
 
-    const email=document.getElementById('username').value;
+    const username=document.getElementById('username').value;
     const password=document.getElementById('password').value;
     const url='http://localhost:9002/user/signin'
      
@@ -13,10 +13,18 @@ signinform.addEventListener('submit',async (e)=>{
          headers:{
             'Content-Type':'application/json'
          },
-         body:JSON.stringify({email,password})
+         body:JSON.stringify({username,password})
     })
     .then(response=>response.json())
-    .then(data=>console.log(data))
+    .then(data=>{
+       if(data.error){
+         window.alert('login failed , enter correct username or password');
+       }
+       else{
+        localStorage.setItem('token',data.token);
+        window.location.href='../app/app.html';
+       }
+    })
     .catch(error=>{
         console.log('error occured');
     })
@@ -24,5 +32,5 @@ signinform.addEventListener('submit',async (e)=>{
 
 showsignup.addEventListener('submit',async(e)=>{
     e.preventDefault();
-    location.href='signup.html';
+    window.location.href='./signup.html';
 })

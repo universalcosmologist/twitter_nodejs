@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+    <link href="../output.css" rel="stylesheet">
+</head>
+<body>
+ <p class="text-2xl font-bold ml-14 mb-6" id="comment_title">Comments</p>
+ <div id="_container" class="ml-14 mb-6"></div>
+ <hr class="w-full border border-black">
+ <form id="commentform" class="ml-14 w-24">
+ <label for="_content" class="text-lg font-bold mr-12">Comment</label>
+ <textarea name="commentcontent" rows="2" cols="16" id="_content" placeholder="enter your comment" class="border border-black mt-4"></textarea>
+ <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Post</button>
+ </form>
+ <div class="message">
+    <span id="messagedisplay"></span>
+ </div>
+ <script src="./comment.js"></script>
+</body>
+</html>
